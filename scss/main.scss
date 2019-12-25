@@ -30,6 +30,10 @@ $happy-yellow : #FAFBD4;
 	}
 }
 
+section {
+	height: 1400px;
+}
+
 .part-1 {
 	background-color: white;
 }
@@ -60,4 +64,72 @@ $happy-yellow : #FAFBD4;
 	background-color: white; 
 	margin-bottom: 200px;
 }
+
+
+// Scenes
+.scene-1 {
+	.background-color: white;
+	.part-2, .part-3, .part-4, .part-5, .part-6 {
+		p, img {
+			opacity: 0;
+		}
+		background-color: white;
+	}
+}
+
+.scene-2 {
+	.background-color: $lone-blue;
+	.part-1, .part-3, .part-4, .part-5, .part-6 {
+		p, img {
+			opacity: 0;
+		}
+		background-color: $lone-blue;
+	}
+}
+
+.scene-3 {
+	.background-color: $lone-blue;
+	.part-1, .part-2, .part-4, .part-5, .part-6 {
+		p, img {
+			opacity: 0;
+		}
+		background-color: $lone-blue;
+	}
+}
+
+.scene-4 {
+	.background-color: $happy-yellow;
+	.part-1, .part-2, .part-3, .part-5, .part-6 {
+		p, img {
+			opacity: 0;
+		}
+		background-color: $happy-yellow;
+	}
+}
+
+.scene-5 {
+	.background-color: $happy-yellow;
+	.part-1, .part-2, .part-3, .part-4, .part-6 {
+		p, img {
+			opacity: 0;
+		}
+		background-color: $happy-yellow;
+	}
+}
+
+.scene-6 {
+	.background-color: white;
+	.part-1, .part-2, .part-3, .part-4, .part-5 {
+		p {
+			opacity: 0;
+		}
+		background-color: white;
+	}
+}
+
+
+
+
+
+
 

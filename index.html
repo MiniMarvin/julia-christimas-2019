@@ -4,14 +4,16 @@
 	<title>Uma história do futuro</title>
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/main.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 </head>
-<body>
+<body id="body">
 	<!-- Zone for the main screen -->
 	<div></div>
 	<!-- Zone for the text -->
 	<div class="story align-items-center">
 		<!-- Part 1 -->
-		<div class="part-1">
+		<section class="part-1" id="part-1">
 			<div class="row">
 				<img src="img/1 - looking back.png">
 			</div>
@@ -20,10 +22,10 @@
 					<p>Olhando para traz, era difícil dizer que eu chegaria onde cheguei, sabe?</p>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<!-- Part 2 -->
-		<div class="part-2">
+		<section class="part-2" id="part-2">
 			<div class="row">
 				<img src="img/2 - loneliness.png">
 			</div>
@@ -32,10 +34,10 @@
 					<p>Naquela época eu sofria tanto, me sentia abandonada, até por quem eu mais tinha certeza que me amava e o destino não ajudava, eventos ruins atrás de eventos ruins, quase ficava difícil comemorar as pequenas vitórias que conseguia, mas bem, acho que as coisas começaram a mudar em 2020 sabe?</p>
 				</div>
 			</div>
-		</div>
+		</section>
 		
 		<!-- Part 3 -->
-		<div class="part-3">
+		<section class="part-3" id="part-3">
 			<div class="row">
 				<img src="img/3 - hope.png">
 			</div>
@@ -44,10 +46,10 @@
 					<p>Conheci pessoas incríveis e me apaixonei por um projeto de contar histórias das minorias, acho que naquele ano comecei a mudar a forma que eu via as coisas, afinal, mesmo com todo o sofrimento da vida que não ajudava muito no fim do dia eu ainda tinha aquela paixão pra me dedicar e era tão gratificante, mas tão gratificante que valia a pena, e quando estava cansada meu namorado mesmo com todos seus pontos negativos vinha me ajudar.</p>	
 				</div>
 			</div>
-		</div>
+		</section>
 		
 		<!-- Part 4 -->
-		<div class="part-4">
+		<section class="part-4" id="part-4">
 			<div class="row">
 				<img src="img/4 - story.png">
 			</div>
@@ -56,10 +58,10 @@
 					<p>Naquele ano me dedicando com paixão aquilo acho que fui ficando boa no que fazia, tanto que chegou um momento, acho que perto de 2021 onde aquele projeto estourou, poderia dizer até que tinha um fã clube! Fui de ser a própria Naoko pra ser uma das meninas mais descoladas, inacreditável.</p>
 				</div>
 			</div>
-		</div>
+		</section>
 		
 		<!-- Part 5 -->
-		<div class="part-5">
+		<section class="part-5" id="part-5">
 			<div class="row">
 				<img src="img/5 - success.png">
 			</div>
@@ -68,10 +70,10 @@
 					<p>Acho que aquilo mudou minha vida, poder todo dia fazer algo sabendo que uma história importante seria contada por mim era muito gratificante, tanto que até hoje no auge dos meus 27 anos, mestre em comunicação continuo entre vários tropeços contatndo as histórias que me fascinam e se tudo der certo farei isso por muito mais tempo!</p>
 				</div>
 			</div>
-		</div>
+		</section>
 		
 		<!-- Part 6 -->
-		<div class="part-6">
+		<section class="part-6" id="part-6">
 			<div class="row">
 				<img src="img/6 - love.png">
 			</div>
@@ -80,8 +82,68 @@
 					<p>E se pudesse mandar uma mensagem pra meu eu do passado diria "continue firme, porque você vai tocar o coração de muitas pessoas!".</p>	
 				</div>
 			</div>
-
-		</div>
+		</section>
 	</div>
+
+	<div style="position: fixed; overflow: visible; white-space: nowrap; pointer-events: none; font-size: 0.85em; z-index: 9999; top: 195.8px; left: 535px;"><div style="position: absolute; overflow: visible; border-width: 1px 0px 0px; border-style: solid; color: blue; border-color: blue; right: 0px;"><div style="position: relative; padding: 0px 8px 3px; transform: translateY(-100%);">trigger 1</div></div></div>
+
+	<!-- Scroll magic control -->
+	<script>
+		// $(function () { // wait for document ready
+		// 	// init
+		// 	var controller = new ScrollMagic.Controller({
+		// 		globalSceneOptions: {
+		// 			triggerHook: 'onLeave',
+		// 			duration: "200%" // this works just fine with duration 0 as well
+		// 			// However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
+		// 			// Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
+		// 		}
+		// 	});
+
+		// 	// get all slides
+		// 	var slides = document.querySelectorAll("section");
+
+		// 	// create scene for every slide
+		// 	for (var i=0; i<slides.length; i++) {
+		// 		new ScrollMagic.Scene({
+		// 				triggerElement: slides[i]
+		// 			})
+		// 			.setPin(slides[i], {pushFollowers: false})
+		// 			.addIndicators() // add indicators (requires plugin)
+		// 			.addTo(controller);
+		// 	}
+		// });
+			var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 0.2, duration: 1400}});
+
+			// build scenes
+			new ScrollMagic.Scene({triggerElement: "#part-1"})
+							.setClassToggle("body", "scene-1") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+			new ScrollMagic.Scene({triggerElement: "#part-2"})
+							.setClassToggle("body", "scene-2") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+			new ScrollMagic.Scene({triggerElement: "#part-3"})
+							.setClassToggle("#body", "scene-3") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+			new ScrollMagic.Scene({triggerElement: "#part-4"})
+							.setClassToggle("#body", "scene-4") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+
+			new ScrollMagic.Scene({triggerElement: "#part-5"})
+							.setClassToggle("#body", "scene-5") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+			new ScrollMagic.Scene({triggerElement: "#part-6"})
+							.setClassToggle("#body", "scene-6") // add class toggle
+							// .addIndicators() // add indicators (requires plugin)
+							.addTo(controller);
+	
+	</script>
+
+
 </body>
 </html>
