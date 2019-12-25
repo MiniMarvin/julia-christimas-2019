@@ -8,6 +8,17 @@ $happy-yellow : #FAFBD4;
 // TODO: Correct max size in desktop version, but for now the
 // only mobile version works fine
 
+div {
+	opacity: 0;
+}
+
+div.story{
+	opacity: 1;
+	div {
+		opacity: 1;
+	}
+}
+
 // Style
 .container {
 	// margin-left: 10%;

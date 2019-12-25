@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 </head>
 <body id="body">
 	<!-- Zone for the main screen -->
@@ -113,7 +113,7 @@
 		// 			.addTo(controller);
 		// 	}
 		// });
-			var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 0.2, duration: 1400}});
+			var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 0.2, duration: 1400, addIndicators: false}});
 
 			// build scenes
 			new ScrollMagic.Scene({triggerElement: "#part-1"})
